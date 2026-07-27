@@ -1,9 +1,3 @@
-/*
- * Colors sampled directly from the book cover (assets/images/cover-light.png):
- * the navy title, the coral Laravel-mark red, and the schematic blue used
- * for the circuit-line illustration. Reusing them is what makes the site
- * read as the same object as the cover, not a generic template.
- */
 :root {
     --navy: #1c2f52;
     --navy-dark: #101d38;
@@ -21,11 +15,6 @@
     --max-width: 72rem;
 }
 
-/*
- * Linux Libertine is the same body typeface used to typeset the book
- * itself (see laravel-in-production/assets/fonts) - reusing it here keeps
- * the site and the book feeling like the same object.
- */
 @font-face {
     font-family: "Libertine";
     src: url("../assets/fonts/LinLibertine_R.ttf") format("truetype");
@@ -104,8 +93,6 @@ a {
     color: var(--coral);
 }
 
-/* ---------- Buttons ---------- */
-
 .btn {
     display: inline-flex;
     align-items: center;
@@ -147,8 +134,6 @@ a {
 .btn-dark:hover {
     background-color: var(--navy-dark);
 }
-
-/* ---------- Nav ---------- */
 
 .site-header {
     position: sticky;
@@ -198,7 +183,6 @@ a {
     color: var(--coral);
 }
 
-/* Mobile dropdown panel, toggled open by .nav-toggle via js/main.js */
 .nav-links.is-open {
     display: flex;
     position: absolute;
@@ -229,8 +213,6 @@ a {
     gap: 0.5rem;
 }
 
-/* Tightened CTA so it stays on one line alongside the hamburger on narrow
-   screens; reverts to the normal .btn sizing once the hamburger disappears. */
 @media (max-width: 767px) {
     .nav-right .btn {
         white-space: nowrap;
@@ -239,7 +221,6 @@ a {
     }
 }
 
-/* Three-line hamburger icon; morphs into an X via .nav-toggle[aria-expanded="true"] */
 .nav-toggle {
     display: flex;
     flex-direction: column;
@@ -284,8 +265,6 @@ a {
         display: none;
     }
 }
-
-/* ---------- Hero ---------- */
 
 .hero {
     position: relative;
@@ -405,15 +384,6 @@ a {
     filter: blur(24px);
 }
 
-/*
- * The book's trim size is US Letter (8.5in x 11in - see the `document` and
- * `cover.dimensions` settings in laravel-in-production/ibis.php), which is
- * very slightly different from cover-light.png's own pixel dimensions.
- * Forcing this exact 8.5:11 ratio (rather than the image's native ratio)
- * keeps the cover on the site the same shape as the actual printed/PDF
- * cover; object-fit: cover absorbs the tiny difference as an imperceptible
- * center-crop instead of a visible stretch.
- */
 .hero-cover img {
     width: 100%;
     height: auto;
@@ -423,8 +393,6 @@ a {
     box-shadow: 0 25px 50px -12px rgba(16, 29, 56, 0.35);
     border: 1px solid rgba(28, 47, 82, 0.1);
 }
-
-/* ---------- Generic sections ---------- */
 
 section {
     border-top: 1px solid rgba(28, 47, 82, 0.1);
@@ -484,8 +452,6 @@ section {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* ---------- "Not a tutorial" comparison ---------- */
-
 .compare-grid {
     display: grid;
     gap: 2rem;
@@ -536,8 +502,6 @@ section {
 .compare-card li {
     margin-bottom: 0.65rem;
 }
-
-/* ---------- Part cards ---------- */
 
 .parts-grid {
     display: grid;
@@ -615,8 +579,6 @@ section {
     line-height: 1.55;
     color: var(--muted);
 }
-
-/* ---------- Table of contents ---------- */
 
 .toc-grid {
     display: grid;
@@ -718,8 +680,6 @@ section {
     color: var(--coral);
 }
 
-/* ---------- Sample section ---------- */
-
 .sample-grid {
     display: grid;
     gap: 2.5rem;
@@ -766,8 +726,6 @@ section {
     margin-bottom: 0.65rem;
 }
 
-/* ---------- Notify / email form ---------- */
-
 .notify-section {
     text-align: center;
 }
@@ -783,22 +741,10 @@ section {
     justify-content: center;
 }
 
-/*
- * The Kit form widget itself (injected by the <script> embed in the
- * #notify section of index.html) renders its own markup/styles, so there's
- * little to style here. One exception: Kit's form sets max-width but no
- * width, so as a flex child it shrinks to its content size instead of the
- * comfortable width its own responsive layout assumes - widen it here
- * (the #notify id gives this enough specificity to win over Kit's
- * `.formkit-form[data-uid="..."]` rule regardless of load order). For
- * anything else - colors, copy, fields - use Kit's Form builder instead.
- */
 #notify .formkit-form {
     width: 100%;
     max-width: 44rem;
 }
-
-/* ---------- About the author ---------- */
 
 .author-grid {
     display: grid;
@@ -843,8 +789,6 @@ section {
 .author-grid .author-link:hover {
     text-decoration: underline;
 }
-
-/* ---------- Footer ---------- */
 
 .site-footer {
     background-color: var(--navy);
