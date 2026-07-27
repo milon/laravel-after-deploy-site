@@ -42,17 +42,24 @@
             <a href="#top" class="brand">
                 <span>LARAVEL IN PRODUCTION</span>
             </a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#inside">What&rsquo;s inside</a>
                 <a href="#toc">Contents</a>
                 <a href="#sample">Free sample</a>
                 <a href="#author">Author</a>
             </div>
-            <!--
-                Not for sale yet (waiting on the ISBN). Once it is, swap this
-                for: <a href="LEMON_SQUEEZY_URL" class="btn btn-primary">Buy the book</a>
-            -->
-            <a href="#notify" class="btn btn-dark">Notify me</a>
+            <div class="nav-right">
+                <!--
+                    Not for sale yet (waiting on the ISBN). Once it is, swap this
+                    for: <a href="LEMON_SQUEEZY_URL" class="btn btn-primary">Buy the book</a>
+                -->
+                <a href="#notify" class="btn btn-dark">Notify me</a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -367,7 +374,7 @@
                         <p class="label">IN THE SAMPLE</p>
                         <ul>
                             <li>&middot; Title, copyright, dedication &amp; a note on how this book was written</li>
-                            <li>&middot; The complete table of contents - all 8 parts, 29 chapters</li>
+                            
                             <li>&middot; Chapter&nbsp;8 in full: Safe Schema Evolution at Scale</li>
                         </ul>
                     </div>
