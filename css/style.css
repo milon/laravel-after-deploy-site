@@ -1,0 +1,823 @@
+/*
+ * Colors sampled directly from the book cover (assets/images/cover-light.png):
+ * the navy title, the coral Laravel-mark red, and the schematic blue used
+ * for the circuit-line illustration. Reusing them is what makes the site
+ * read as the same object as the cover, not a generic template.
+ */
+:root {
+    --navy: #1c2f52;
+    --navy-dark: #101d38;
+    --coral: #e2543f;
+    --coral-dark: #c23f2c;
+    --circuit: #3d5a8a;
+    --paper: #faf8f6;
+    --ink: #252525;
+    --muted: #606c76;
+    --white: #ffffff;
+
+    --font-serif: "Libertine", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --font-display: "Archivo Black", "Arial Black", sans-serif;
+
+    --max-width: 72rem;
+}
+
+/*
+ * Linux Libertine is the same body typeface used to typeset the book
+ * itself (see laravel-in-production/assets/fonts) - reusing it here keeps
+ * the site and the book feeling like the same object.
+ */
+@font-face {
+    font-family: "Libertine";
+    src: url("../assets/fonts/LinLibertine_R.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libertine";
+    src: url("../assets/fonts/LinLibertine_RB.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libertine";
+    src: url("../assets/fonts/LinLibertine_RI.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Libertine";
+    src: url("../assets/fonts/LinLibertine_RBI.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-serif);
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    color: var(--navy);
+}
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--coral);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-serif);
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+    background-color: var(--coral);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--coral-dark);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    border-color: rgba(28, 47, 82, 0.2);
+    color: var(--navy);
+}
+
+.btn-secondary:hover {
+    border-color: rgba(28, 47, 82, 0.45);
+}
+
+.btn-dark {
+    background-color: var(--navy);
+    color: var(--white);
+}
+
+.btn-dark:hover {
+    background-color: var(--navy-dark);
+}
+
+/* ---------- Nav ---------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(250, 248, 246, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(28, 47, 82, 0.1);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.brand span {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+}
+
+.nav-links {
+    display: none;
+    align-items: center;
+    gap: 1.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(28, 47, 82, 0.8);
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--coral);
+}
+
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--circuit) 1px, transparent 1px),
+        linear-gradient(90deg, var(--circuit) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.06;
+}
+
+.hero-inner {
+    position: relative;
+    display: grid;
+    gap: 3rem;
+    padding: 4rem 0 5rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-inner {
+        grid-template-columns: 1fr 1fr;
+        padding: 6rem 0 7rem;
+    }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(226, 84, 63, 0.3);
+    background-color: rgba(226, 84, 63, 0.1);
+    color: var(--coral-dark);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 1.25rem 0 0;
+}
+
+@media (min-width: 640px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+.hero .subtitle {
+    margin: 0.75rem 0 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.hero p.lede {
+    margin: 1.5rem 0 0;
+    max-width: 32rem;
+    font-size: 1.15rem;
+}
+
+.hero .byline {
+    margin: 1rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.hero .format-pills {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.format-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(28, 47, 82, 0.15);
+    background-color: rgba(28, 47, 82, 0.04);
+    color: var(--navy);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.hero .cta-row {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-cover {
+    position: relative;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.hero-cover::before {
+    content: "";
+    position: absolute;
+    inset: -1.5rem;
+    z-index: -1;
+    border-radius: 2rem;
+    background-color: rgba(28, 47, 82, 0.06);
+    filter: blur(24px);
+}
+
+/*
+ * The book's trim size is US Letter (8.5in x 11in - see the `document` and
+ * `cover.dimensions` settings in laravel-in-production/ibis.php), which is
+ * very slightly different from cover-light.png's own pixel dimensions.
+ * Forcing this exact 8.5:11 ratio (rather than the image's native ratio)
+ * keeps the cover on the site the same shape as the actual printed/PDF
+ * cover; object-fit: cover absorbs the tiny difference as an imperceptible
+ * center-crop instead of a visible stretch.
+ */
+.hero-cover img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8.5 / 11;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 25px 50px -12px rgba(16, 29, 56, 0.35);
+    border: 1px solid rgba(28, 47, 82, 0.1);
+}
+
+/* ---------- Generic sections ---------- */
+
+section {
+    border-top: 1px solid rgba(28, 47, 82, 0.1);
+}
+
+.section-white {
+    background-color: var(--white);
+}
+
+.section-navy {
+    background-color: var(--navy);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.section-pad {
+    padding: 4rem 0;
+}
+
+@media (min-width: 640px) {
+    .section-pad {
+        padding: 5rem 0;
+    }
+}
+
+.section-heading {
+    max-width: 40rem;
+}
+
+.section-heading h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0;
+}
+
+@media (min-width: 640px) {
+    .section-heading h2 {
+        font-size: 1.875rem;
+    }
+}
+
+.section-heading p {
+    margin-top: 1rem;
+    color: var(--muted);
+}
+
+.section-navy .section-heading p,
+.section-navy .eyebrow {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.section-navy .section-heading h2 {
+    color: var(--white);
+}
+
+.section-navy .eyebrow {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ---------- "Not a tutorial" comparison ---------- */
+
+.compare-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+    .compare-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.compare-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(28, 47, 82, 0.1);
+}
+
+.compare-card.accent {
+    border-color: rgba(226, 84, 63, 0.2);
+    background-color: rgba(226, 84, 63, 0.05);
+}
+
+.compare-card p.label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 0;
+}
+
+.compare-card.accent p.label {
+    color: var(--coral-dark);
+}
+
+.compare-card ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.compare-card.accent ul {
+    color: var(--ink);
+}
+
+.compare-card li {
+    margin-bottom: 0.65rem;
+}
+
+/* ---------- Part cards ---------- */
+
+.parts-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 640px) {
+    .parts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .parts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.part-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    border: 1px solid rgba(28, 47, 82, 0.1);
+    background-color: var(--white);
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px rgba(16, 29, 56, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.part-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(16, 29, 56, 0.08);
+}
+
+.part-card .part-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.part-card .part-number {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    color: var(--coral);
+}
+
+.part-card .part-chapters {
+    border-radius: 999px;
+    background-color: rgba(28, 47, 82, 0.05);
+    padding: 0.25rem 0.65rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(28, 47, 82, 0.6);
+    white-space: nowrap;
+}
+
+.part-card h3 {
+    margin: 0.75rem 0 0;
+    font-size: 1.1rem;
+    color: var(--navy);
+}
+
+.part-card .part-subtitle {
+    margin: 0.15rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.part-card p.desc {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+/* ---------- Table of contents ---------- */
+
+.toc-grid {
+    display: grid;
+    gap: 2rem 3rem;
+    margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .toc-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.toc-part {
+    align-self: start;
+}
+
+.toc-part summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    list-style: none;
+    cursor: pointer;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--coral);
+    user-select: none;
+}
+
+.toc-part summary::-webkit-details-marker {
+    display: none;
+}
+
+.toc-part summary::after {
+    content: "+";
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(28, 47, 82, 0.06);
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.toc-part[open] summary::after {
+    content: "\2212";
+}
+
+.toc-part summary:hover::after {
+    background-color: rgba(28, 47, 82, 0.12);
+}
+
+.toc-part-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.toc-part-count {
+    flex: 1 1 auto;
+    text-align: right;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.toc-part ol {
+    list-style: none;
+    margin: 0.25rem 0 0;
+    padding: 0;
+}
+
+.toc-part li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(28, 47, 82, 0.08);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--ink);
+}
+
+.toc-part li:last-child {
+    border-bottom: none;
+}
+
+.toc-num {
+    flex-shrink: 0;
+    min-width: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: var(--coral);
+}
+
+/* ---------- Sample section ---------- */
+
+.sample-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .sample-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.sample-download-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.sample-box {
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+}
+
+.sample-box p.label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.sample-box ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.sample-box li {
+    margin-bottom: 0.65rem;
+}
+
+/* ---------- Notify / email form ---------- */
+
+.notify-section {
+    text-align: center;
+}
+
+.notify-section .section-heading {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.notify-form {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/*
+ * The Kit form widget itself (injected by the <script> embed in the
+ * #notify section of index.html) renders its own markup/styles, so there's
+ * little to style here. One exception: Kit's form sets max-width but no
+ * width, so as a flex child it shrinks to its content size instead of the
+ * comfortable width its own responsive layout assumes - widen it here
+ * (the #notify id gives this enough specificity to win over Kit's
+ * `.formkit-form[data-uid="..."]` rule regardless of load order). For
+ * anything else - colors, copy, fields - use Kit's Form builder instead.
+ */
+#notify .formkit-form {
+    width: 100%;
+    max-width: 44rem;
+}
+
+/* ---------- About the author ---------- */
+
+.author-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .author-grid {
+        grid-template-columns: auto 1fr;
+        align-items: flex-start;
+    }
+}
+
+.author-grid img {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    border: 1px solid rgba(28, 47, 82, 0.1);
+}
+
+.author-grid h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--navy);
+}
+
+.author-grid p {
+    margin-top: 0.75rem;
+    max-width: 40rem;
+    color: var(--muted);
+}
+
+.author-grid .author-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--coral-dark);
+    text-decoration: none;
+}
+
+.author-grid .author-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+    background-color: var(--navy);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-brand p {
+    margin: 0;
+}
+
+.footer-brand .brand-title {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+}
+
+.footer-brand .brand-byline {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
