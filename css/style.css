@@ -9,42 +9,20 @@
     --muted: #606c76;
     --white: #ffffff;
 
-    --font-serif: "Libertine", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-    --font-display: "Archivo Black", "Arial Black", sans-serif;
+    --font-hand: "Caveat", "Segoe Print", "Comic Sans MS", cursive;
+    --font-display: "Permanent Marker", "Caveat", cursive;
+    --font-author: "Gochi Hand", "Caveat", cursive;
+
+    --pastel-blue: rgba(47, 111, 237, 0.10);
+    --pastel-teal: rgba(15, 154, 168, 0.10);
+    --pastel-purple: rgba(122, 90, 248, 0.10);
+    --pastel-coral: rgba(226, 84, 63, 0.10);
+    --pastel-amber: rgba(196, 122, 18, 0.10);
+    --pastel-green: rgba(47, 158, 68, 0.10);
+    --pastel-orange: rgba(217, 72, 15, 0.10);
+    --pastel-indigo: rgba(92, 124, 250, 0.10);
 
     --max-width: 72rem;
-}
-
-@font-face {
-    font-family: "Libertine";
-    src: url("../assets/fonts/LinLibertine_R.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Libertine";
-    src: url("../assets/fonts/LinLibertine_RB.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Libertine";
-    src: url("../assets/fonts/LinLibertine_RI.ttf") format("truetype");
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Libertine";
-    src: url("../assets/fonts/LinLibertine_RBI.ttf") format("truetype");
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
 }
 
 * {
@@ -57,10 +35,11 @@ html {
 
 body {
     margin: 0;
-    font-family: var(--font-serif);
+    font-family: var(--font-hand);
     background-color: var(--paper);
     color: var(--ink);
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -83,13 +62,15 @@ a {
     font-family: var(--font-display);
     letter-spacing: 0.01em;
     color: var(--navy);
+    font-weight: 400;
 }
 
 .eyebrow {
     display: inline-block;
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     color: var(--coral);
 }
 
@@ -97,10 +78,11 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border-radius: 999px;
+    border-radius: 1rem;
     padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    font-family: var(--font-serif);
+    font-weight: 700;
+    font-family: var(--font-hand);
+    font-size: 1.15rem;
     text-decoration: none;
     border: 1px solid transparent;
     cursor: pointer;
@@ -161,16 +143,17 @@ a {
 
 .brand span {
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     color: var(--navy);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    font-weight: 400;
 }
 
 .nav-links {
     display: none;
     align-items: center;
     gap: 1.75rem;
-    font-size: 0.9rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: rgba(28, 47, 82, 0.8);
 }
@@ -275,10 +258,9 @@ a {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(var(--circuit) 1px, transparent 1px),
-        linear-gradient(90deg, var(--circuit) 1px, transparent 1px);
-    background-size: 48px 48px;
-    opacity: 0.06;
+        radial-gradient(rgba(28, 47, 82, 0.05) 1.5px, transparent 1.5px);
+    background-size: 28px 28px;
+    opacity: 1;
 }
 
 .hero-inner {
@@ -302,43 +284,48 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid rgba(226, 84, 63, 0.3);
-    background-color: rgba(226, 84, 63, 0.1);
+    border: none;
+    background-color: var(--pastel-coral);
     color: var(--coral-dark);
-    border-radius: 999px;
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 600;
+    border-radius: 1rem;
+    padding: 0.45rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     line-height: 1.1;
     margin: 1.25rem 0 0;
+    color: var(--coral);
+    -webkit-text-stroke: 3px var(--navy);
+    paint-order: stroke fill;
 }
 
 @media (min-width: 640px) {
     .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+        -webkit-text-stroke: 4px var(--navy);
     }
 }
 
 .hero .subtitle {
     margin: 0.75rem 0 0;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--muted);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--circuit);
 }
 
 .hero p.lede {
     margin: 1.5rem 0 0;
     max-width: 32rem;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
 }
 
 .hero .byline {
     margin: 1rem 0 0;
-    font-size: 0.9rem;
+    font-family: var(--font-author);
+    font-size: 1.15rem;
     color: var(--muted);
 }
 
@@ -352,12 +339,12 @@ a {
 .format-pill {
     display: inline-flex;
     align-items: center;
-    border: 1px solid rgba(28, 47, 82, 0.15);
-    background-color: rgba(28, 47, 82, 0.04);
+    border: none;
+    background-color: var(--pastel-blue);
     color: var(--navy);
-    border-radius: 999px;
-    padding: 0.3rem 0.85rem;
-    font-size: 0.7rem;
+    border-radius: 1rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
@@ -389,9 +376,9 @@ a {
     height: auto;
     aspect-ratio: 8.5 / 11;
     object-fit: cover;
-    border-radius: 0.5rem;
-    box-shadow: 0 25px 50px -12px rgba(16, 29, 56, 0.35);
-    border: 1px solid rgba(28, 47, 82, 0.1);
+    border-radius: 1.25rem;
+    box-shadow: 0 25px 50px -12px rgba(16, 29, 56, 0.28);
+    border: none;
 }
 
 section {
@@ -424,19 +411,21 @@ section {
 }
 
 .section-heading h2 {
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     margin: 0.5rem 0 0;
+    font-weight: 400;
 }
 
 @media (min-width: 640px) {
     .section-heading h2 {
-        font-size: 1.875rem;
+        font-size: 2.25rem;
     }
 }
 
 .section-heading p {
     margin-top: 1rem;
     color: var(--muted);
+    font-size: 1.2rem;
 }
 
 .section-navy .section-heading p,
@@ -465,21 +454,23 @@ section {
 }
 
 .compare-card {
-    border-radius: 1rem;
+    border-radius: 1.25rem;
     padding: 1.5rem;
-    border: 1px solid rgba(28, 47, 82, 0.1);
+    border: none;
+    background-color: var(--pastel-blue);
 }
 
 .compare-card.accent {
-    border-color: rgba(226, 84, 63, 0.2);
-    background-color: rgba(226, 84, 63, 0.05);
+    border: none;
+    background-color: var(--pastel-coral);
 }
 
 .compare-card p.label {
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    color: var(--muted);
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--circuit);
     margin: 0;
 }
 
@@ -491,7 +482,7 @@ section {
     margin: 1rem 0 0;
     padding: 0;
     list-style: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--muted);
 }
 
@@ -524,17 +515,25 @@ section {
 .part-card {
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
-    border: 1px solid rgba(28, 47, 82, 0.1);
-    background-color: var(--white);
+    border-radius: 1.25rem;
+    border: none;
+    background-color: var(--pastel-blue);
     padding: 1.5rem;
-    box-shadow: 0 1px 2px rgba(16, 29, 56, 0.04);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: none;
+    transition: transform 0.15s ease;
 }
+
+.part-card:nth-child(8n + 2) { background-color: var(--pastel-teal); }
+.part-card:nth-child(8n + 3) { background-color: var(--pastel-purple); }
+.part-card:nth-child(8n + 4) { background-color: var(--pastel-coral); }
+.part-card:nth-child(8n + 5) { background-color: var(--pastel-amber); }
+.part-card:nth-child(8n + 6) { background-color: var(--pastel-green); }
+.part-card:nth-child(8n + 7) { background-color: var(--pastel-orange); }
+.part-card:nth-child(8n + 8) { background-color: var(--pastel-indigo); }
 
 .part-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(16, 29, 56, 0.08);
+    box-shadow: none;
 }
 
 .part-card .part-top {
@@ -545,37 +544,40 @@ section {
 }
 
 .part-card .part-number {
-    font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--coral);
 }
 
 .part-card .part-chapters {
-    border-radius: 999px;
-    background-color: rgba(28, 47, 82, 0.05);
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.55);
     padding: 0.25rem 0.65rem;
-    font-size: 0.7rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: rgba(28, 47, 82, 0.6);
+    color: rgba(28, 47, 82, 0.7);
     white-space: nowrap;
 }
 
 .part-card h3 {
     margin: 0.75rem 0 0;
-    font-size: 1.1rem;
+    font-family: var(--font-hand);
+    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--navy);
 }
 
 .part-card .part-subtitle {
     margin: 0.15rem 0 0;
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 600;
     color: var(--muted);
 }
 
 .part-card p.desc {
     margin-top: 0.75rem;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     line-height: 1.55;
     color: var(--muted);
 }
@@ -638,7 +640,7 @@ section {
 }
 
 .toc-part-title {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--navy);
 }
@@ -646,7 +648,7 @@ section {
 .toc-part-count {
     flex: 1 1 auto;
     text-align: right;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--muted);
 }
@@ -663,7 +665,7 @@ section {
     gap: 0.75rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(28, 47, 82, 0.08);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     color: var(--ink);
 }
@@ -675,8 +677,9 @@ section {
 .toc-num {
     flex-shrink: 0;
     min-width: 1.5rem;
-    font-family: var(--font-display);
-    font-size: 0.75rem;
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    font-weight: 700;
     color: var(--coral);
 }
 
@@ -700,17 +703,18 @@ section {
 }
 
 .sample-box {
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: none;
     padding: 1.5rem;
 }
 
 .sample-box p.label {
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.65);
     margin: 0;
 }
 
@@ -768,7 +772,9 @@ section {
 
 .author-grid h2 {
     margin: 0;
-    font-size: 1.25rem;
+    font-family: var(--font-author);
+    font-size: 1.75rem;
+    font-weight: 400;
     color: var(--navy);
 }
 
@@ -776,12 +782,14 @@ section {
     margin-top: 0.75rem;
     max-width: 40rem;
     color: var(--muted);
+    font-size: 1.2rem;
 }
 
 .author-grid .author-link {
     display: inline-block;
     margin-top: 1rem;
     font-weight: 700;
+    font-size: 1.15rem;
     color: var(--coral-dark);
     text-decoration: none;
 }
@@ -817,21 +825,23 @@ section {
 
 .footer-brand .brand-title {
     font-family: var(--font-display);
-    font-size: 0.75rem;
+    font-size: 1.15rem;
     color: var(--white);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    font-weight: 400;
 }
 
 .footer-brand .brand-byline {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-author);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .footer-links {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 .footer-links a {
@@ -849,6 +859,6 @@ section {
 .footer-bottom p {
     margin: 0;
     padding: 1rem 0;
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.4);
 }
