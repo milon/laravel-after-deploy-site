@@ -412,7 +412,13 @@ a {
     object-fit: cover;
     border-radius: 0;
     border: 1px solid rgba(252, 232, 196, 0.55);
-    box-shadow: 18px 18px 0 var(--ink);
+    transform: rotate(-2.5deg);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42);
+    transition: transform 0.35s ease;
+}
+
+.hero-cover:hover img {
+    transform: rotate(-2deg);
 }
 
 section {
@@ -932,5 +938,11 @@ section {
     .btn:hover,
     .part-card:hover {
         transform: none;
+    }
+
+    .hero-cover img,
+    .hero-cover:hover img {
+        transform: rotate(-2.5deg);
+        transition: none;
     }
 }
