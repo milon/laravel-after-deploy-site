@@ -408,7 +408,7 @@ a {
 .hero-cover img {
     width: 100%;
     height: auto;
-    aspect-ratio: 8.5 / 11;
+    aspect-ratio: 7.5 / 9.25;
     object-fit: cover;
     border-radius: 0;
     border: 1px solid rgba(252, 232, 196, 0.55);
