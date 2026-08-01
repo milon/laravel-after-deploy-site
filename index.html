@@ -28,7 +28,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -37,25 +37,10 @@
 <body>
 
     <header class="site-header">
-        <nav class="container nav">
-            <a href="#top" class="brand">
-                <span>Laravel After Deploy</span>
-            </a>
-            <div class="nav-links" id="nav-links">
-                <a href="#inside">What&rsquo;s inside</a>
-                <a href="#toc">Contents</a>
-                <a href="#sample">Free sample</a>
-                <a href="#author">Author</a>
-            </div>
-            <div class="nav-right">
-                <a href="#notify" class="btn btn-dark">Notify me</a>
-                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </nav>
+        <div class="container nav">
+            <a href="#top" class="brand">Laravel After Deploy</a>
+            <a href="#notify" class="btn btn-primary">Notify me</a>
+        </div>
     </header>
 
     <main id="top">
@@ -63,9 +48,9 @@
         <section class="hero">
             <div class="container hero-inner">
                 <div>
-                    <span class="badge">Almost done &middot; coming soon</span>
+                    <p class="kicker">Almost done &middot; coming soon</p>
 
-                    <h1 class="display">Laravel After<br>Deploy</h1>
+                    <h1>Laravel After Deploy</h1>
                     <p class="subtitle">Architecture, Performance, and Operations at Scale</p>
 
                     <p class="lede">
@@ -75,17 +60,11 @@
                         maintenance window.
                     </p>
 
-                    <p class="byline">By Nuruzzaman Milon &middot; 34 chapters across 8 parts</p>
-
-                    <div class="format-pills">
-                        <span class="format-pill">PDF &middot; light mode</span>
-                        <span class="format-pill">PDF &middot; dark mode</span>
-                        <span class="format-pill">EPUB</span>
-                    </div>
+                    <p class="meta">By Nuruzzaman Milon &middot; 34 chapters &middot; PDF &amp; EPUB</p>
 
                     <div class="cta-row">
                         <a href="#notify" class="btn btn-primary">Get notified when it&rsquo;s ready</a>
-                        <a href="#sample" class="btn btn-ghost">Download a free sample</a>
+                        <a href="#sample" class="btn btn-outline">Download a free sample</a>
                     </div>
                 </div>
 
@@ -99,296 +78,140 @@
             </div>
         </section>
 
-        <section class="section-white">
+        <section>
             <div class="container section-pad">
-                <h2 class="display" style="font-size: 2.75rem;">This isn&rsquo;t a Laravel tutorial.</h2>
-                <p style="max-width: 42rem; color: var(--muted); margin-top: 1rem;">
-                    If you&rsquo;re looking for how to define a route, write a migration, or use
-                    Eloquent relationships, there are excellent books for that already - this
-                    isn&rsquo;t one of them. This book starts where those end.
+                <p class="intro">
+                    This isn&rsquo;t a Laravel tutorial. If you&rsquo;re looking for how to define
+                    a route or use Eloquent relationships, there are good books for that already
+                    - this one starts where those end: structuring a codebase as more than one
+                    team touches it, keeping it fast and correct under real load, staying
+                    available when a dependency fails, and running all of it at 3&nbsp;a.m.
+                    without it becoming a year-long story.
+                </p>
+            </div>
+        </section>
+
+        <section id="toc">
+            <div class="container section-pad">
+                <h2>Contents</h2>
+                <p class="section-note">
+                    Eight parts, ordered by dependency, not importance. Part 1 and Part 2 build
+                    vocabulary the rest of the book assumes - beyond that, most parts stand on
+                    their own.
                 </p>
 
-                <div class="compare-grid">
-                    <div class="compare-card">
-                        <p class="label">NOT IN HERE</p>
-                        <ul>
-                            <li>&middot; How routing, Eloquent, or queues work</li>
-                            <li>&middot; Basic CRUD and Blade templating</li>
-                            <li>&middot; A framework feature tour</li>
-                        </ul>
-                    </div>
-                    <div class="compare-card accent">
-                        <p class="label">WHAT&rsquo;S ACTUALLY IN HERE</p>
-                        <ul>
-                            <li>&middot; Structuring a codebase as more than one team touches it</li>
-                            <li>&middot; Keeping it fast once traffic outgrows one database</li>
-                            <li>&middot; Keeping it correct when a request can arrive twice</li>
-                            <li>&middot; Keeping it available when a dependency you don&rsquo;t control fails</li>
-                            <li>&middot; Running all of it at 3&nbsp;a.m. without it becoming a year-long story</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="inside" class="section-paper">
-            <div class="container section-pad">
-                <div class="section-heading">
-                    <span class="eyebrow">WHAT&rsquo;S INSIDE</span>
-                    <h2 class="display">Eight parts, ordered by dependency, not importance.</h2>
-                    <p>
-                        Part 1 and Part 2 build vocabulary the rest of the book assumes. Beyond
-                        that, most parts stand on their own - if you picked this up because of a
-                        live incident with your queues, your database failover, or your CI
-                        pipeline, it&rsquo;s reasonable to skip straight to the relevant chapter.
-                    </p>
-                </div>
-
-                <div class="parts-grid">
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 1</span>
-                            <span class="part-chapters">6 chapters</span>
-                        </div>
-                        <h3>Foundations</h3>
-                        <p class="part-subtitle">Structuring Laravel Systems</p>
-                        <p class="desc">Sets the vocabulary and decision frameworks the rest of the book relies on - starting with monolith vs. modular monolith vs. microservices as runtime shapes, then treating monorepos, shared kernels, and extractions as separate decisions.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 2</span>
-                            <span class="part-chapters">9 chapters</span>
-                        </div>
-                        <h3>Performance Engineering</h3>
-                        <p class="desc">The mechanics of making a Laravel application fast under real load, from the database up through caching, media/CDN delivery, queues, and long-running runtimes like FrankenPHP worker mode.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 3</span>
-                            <span class="part-chapters">4 chapters</span>
-                        </div>
-                        <h3>Correctness Under Load</h3>
-                        <p class="desc">Performance and availability don&rsquo;t matter if the system produces wrong answers under concurrency - idempotency, state machines, ledger patterns, and event sourcing for systems where the mistake is money.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 4</span>
-                            <span class="part-chapters">4 chapters</span>
-                        </div>
-                        <h3>High Availability &amp; Resilience</h3>
-                        <p class="desc">Keeping the system up, or gracefully degraded, when a dependency fails, a data center goes dark, or a risky release needs to be undone in seconds instead of minutes.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 5</span>
-                            <span class="part-chapters">2 chapters</span>
-                        </div>
-                        <h3>Observability &amp; Monitoring</h3>
-                        <p class="desc">Seeing what a production system is actually doing - logs, metrics, and traces that answer &ldquo;what happened,&rdquo; and alerts that page on what users feel.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 6</span>
-                            <span class="part-chapters">4 chapters</span>
-                        </div>
-                        <h3>Deployment &amp; CI/CD</h3>
-                        <p class="desc">Getting code from a merged pull request into production safely and repeatably - build pipelines, container-based releases, coordinated frontend and backend feature releases, and the infrastructure underneath them.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 7</span>
-                            <span class="part-chapters">4 chapters</span>
-                        </div>
-                        <h3>Operations</h3>
-                        <p class="desc">The day-to-day discipline of running a live system: closing the security gaps behind most real incidents, responding well when something breaks anyway, managing cost sustainably, and using AI-assisted development without skipping production standards.</p>
-                    </article>
-
-                    <article class="part-card">
-                        <div class="part-top">
-                            <span class="part-number">PART 8</span>
-                            <span class="part-chapters">1 chapter</span>
-                        </div>
-                        <h3>Capstone</h3>
-                        <p class="desc">One fictional system, HaatBazaar, followed through every layer this book has covered, as the decisions from Parts 1 through 7 collide during a genuinely bad night.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="toc" class="section-white">
-            <div class="container section-pad">
-                <div class="section-heading">
-                    <span class="eyebrow">TABLE OF CONTENTS</span>
-                    <h2 class="display">All 34 chapters, part by part.</h2>
-                    <p>
-                        The full chapter list, if you&rsquo;d rather scan titles than
-                        descriptions. Plus a preface up front and, at the back, an
-                        appendix with a glossary and an about-the-author page.
-                    </p>
-                </div>
-
-                <div class="toc-grid">
-                    <details class="toc-part" open>
-                        <summary>
-                            <span class="toc-part-title">Part 1 &middot; Foundations</span>
-                            <span class="toc-part-count">6 chapters</span>
-                        </summary>
+                <div class="toc-list">
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 1</span> &middot; Foundations</h3>
                         <ol>
-                            <li><span class="toc-num">1</span> Monolith vs. Modular Monolith vs. Microservices</li>
-                            <li><span class="toc-num">2</span> The Shared Kernel Problem</li>
-                            <li><span class="toc-num">3</span> Multi-App Monorepos in Practice</li>
-                            <li><span class="toc-num">4</span> Carving Out a Service</li>
-                            <li><span class="toc-num">5</span> Designing for Vendor Replaceability</li>
-                            <li><span class="toc-num">6</span> Upgrading &amp; Refactoring Laravel at Scale</li>
+                            <li><span>1</span> Monolith vs. Modular Monolith vs. Microservices</li>
+                            <li><span>2</span> The Shared Kernel Problem</li>
+                            <li><span>3</span> Multi-App Monorepos in Practice</li>
+                            <li><span>4</span> Carving Out a Service</li>
+                            <li><span>5</span> Designing for Vendor Replaceability</li>
+                            <li><span>6</span> Upgrading &amp; Refactoring Laravel at Scale</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 2 &middot; Performance Engineering</span>
-                            <span class="toc-part-count">9 chapters</span>
-                        </summary>
-                        <ol start="7">
-                            <li><span class="toc-num">7</span> Database Performance Fundamentals</li>
-                            <li><span class="toc-num">8</span> Safe Schema Evolution at Scale</li>
-                            <li><span class="toc-num">9</span> Caching Strategies</li>
-                            <li><span class="toc-num">10</span> Images on S3, CDNs, and Cache Invalidation</li>
-                            <li><span class="toc-num">11</span> Queues &amp; Background Processing at Scale</li>
-                            <li><span class="toc-num">12</span> Long-Running PHP with FrankenPHP Worker Mode</li>
-                            <li><span class="toc-num">13</span> Real-Time Systems &amp; WebSockets at Scale</li>
-                            <li><span class="toc-num">14</span> Rate Limiting &amp; Abuse Protection</li>
-                            <li><span class="toc-num">15</span> Load Testing &amp; Capacity Planning</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 2</span> &middot; Performance Engineering</h3>
+                        <ol>
+                            <li><span>7</span> Database Performance Fundamentals</li>
+                            <li><span>8</span> Safe Schema Evolution at Scale</li>
+                            <li><span>9</span> Caching Strategies</li>
+                            <li><span>10</span> Images on S3, CDNs, and Cache Invalidation</li>
+                            <li><span>11</span> Queues &amp; Background Processing at Scale</li>
+                            <li><span>12</span> Long-Running PHP with FrankenPHP Worker Mode</li>
+                            <li><span>13</span> Real-Time Systems &amp; WebSockets at Scale</li>
+                            <li><span>14</span> Rate Limiting &amp; Abuse Protection</li>
+                            <li><span>15</span> Load Testing &amp; Capacity Planning</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 3 &middot; Correctness Under Load</span>
-                            <span class="toc-part-count">4 chapters</span>
-                        </summary>
-                        <ol start="16">
-                            <li><span class="toc-num">16</span> Money, State Machines, and Idempotency</li>
-                            <li><span class="toc-num">17</span> Case Study: From Mutable Balance to Append-Only Ledger</li>
-                            <li><span class="toc-num">18</span> Event Sourcing in Laravel</li>
-                            <li><span class="toc-num">19</span> Distributed Transactions Without Two-Phase Commit</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 3</span> &middot; Correctness Under Load</h3>
+                        <ol>
+                            <li><span>16</span> Money, State Machines, and Idempotency</li>
+                            <li><span>17</span> Case Study: From Mutable Balance to Append-Only Ledger</li>
+                            <li><span>18</span> Event Sourcing in Laravel</li>
+                            <li><span>19</span> Distributed Transactions Without Two-Phase Commit</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 4 &middot; High Availability &amp; Resilience</span>
-                            <span class="toc-part-count">4 chapters</span>
-                        </summary>
-                        <ol start="20">
-                            <li><span class="toc-num">20</span> Designing for Failure</li>
-                            <li><span class="toc-num">21</span> Data-Layer High Availability</li>
-                            <li><span class="toc-num">22</span> Disaster Recovery &amp; Backups</li>
-                            <li><span class="toc-num">23</span> Feature Flags &amp; Progressive Delivery</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 4</span> &middot; High Availability &amp; Resilience</h3>
+                        <ol>
+                            <li><span>20</span> Designing for Failure</li>
+                            <li><span>21</span> Data-Layer High Availability</li>
+                            <li><span>22</span> Disaster Recovery &amp; Backups</li>
+                            <li><span>23</span> Feature Flags &amp; Progressive Delivery</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 5 &middot; Observability &amp; Monitoring</span>
-                            <span class="toc-part-count">2 chapters</span>
-                        </summary>
-                        <ol start="24">
-                            <li><span class="toc-num">24</span> The Three Pillars in a Laravel Application</li>
-                            <li><span class="toc-num">25</span> Alerting &amp; SLOs</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 5</span> &middot; Observability &amp; Monitoring</h3>
+                        <ol>
+                            <li><span>24</span> The Three Pillars in a Laravel Application</li>
+                            <li><span>25</span> Alerting &amp; SLOs</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 6 &middot; Deployment &amp; CI/CD</span>
-                            <span class="toc-part-count">4 chapters</span>
-                        </summary>
-                        <ol start="26">
-                            <li><span class="toc-num">26</span> CI Pipelines for Monorepos</li>
-                            <li><span class="toc-num">27</span> Container Deployments</li>
-                            <li><span class="toc-num">28</span> Infrastructure as Code for Laravel</li>
-                            <li><span class="toc-num">29</span> Coordinated Frontend &amp; Backend Releases</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 6</span> &middot; Deployment &amp; CI/CD</h3>
+                        <ol>
+                            <li><span>26</span> CI Pipelines for Monorepos</li>
+                            <li><span>27</span> Container Deployments</li>
+                            <li><span>28</span> Infrastructure as Code for Laravel</li>
+                            <li><span>29</span> Coordinated Frontend &amp; Backend Releases</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 7 &middot; Operations</span>
-                            <span class="toc-part-count">4 chapters</span>
-                        </summary>
-                        <ol start="30">
-                            <li><span class="toc-num">30</span> Security in Production</li>
-                            <li><span class="toc-num">31</span> Runbooks &amp; On-Call</li>
-                            <li><span class="toc-num">32</span> Cost &amp; Capacity Management</li>
-                            <li><span class="toc-num">33</span> AI-Assisted Development on a Laravel Team</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 7</span> &middot; Operations</h3>
+                        <ol>
+                            <li><span>30</span> Security in Production</li>
+                            <li><span>31</span> Runbooks &amp; On-Call</li>
+                            <li><span>32</span> Cost &amp; Capacity Management</li>
+                            <li><span>33</span> AI-Assisted Development on a Laravel Team</li>
                         </ol>
-                    </details>
+                    </div>
 
-                    <details class="toc-part">
-                        <summary>
-                            <span class="toc-part-title">Part 8 &middot; Capstone</span>
-                            <span class="toc-part-count">1 chapter</span>
-                        </summary>
-                        <ol start="34">
-                            <li><span class="toc-num">34</span> Putting It Together</li>
+                    <div class="toc-part">
+                        <h3><span class="toc-part-num">Part 8</span> &middot; Capstone</h3>
+                        <ol>
+                            <li><span>34</span> Putting It Together</li>
                         </ol>
-                    </details>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="sample" class="section-ink">
             <div class="container section-pad">
-                <div class="sample-grid">
-                    <div>
-                        <span class="eyebrow">FREE SAMPLE</span>
-                        <h2 class="display" style="font-size: 2.75rem; margin-top: 0.5rem;">Read before you commit to anything.</h2>
-                        <p style="max-width: 32rem; color: rgba(252, 232, 196, 0.75); margin-top: 1rem;">
-                            The sample includes the front matter and two full chapters -
-                            Chapter&nbsp;8 on schema evolution and Chapter&nbsp;14 on money,
-                            state machines, and idempotency - enough to see how the book
-                            opens and how it handles both performance and correctness.
-                            No email required.
-                        </p>
-                        <div class="sample-download-row">
-                            <a href="assets/downloads/sample-laravel-after-deploy-light.pdf" class="btn btn-primary">
-                                Download sample &middot; light mode (PDF)
-                            </a>
-                            <a href="assets/downloads/sample-laravel-after-deploy-dark.pdf" class="btn btn-ghost">
-                                Download sample &middot; dark mode (PDF)
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="sample-box">
-                        <p class="label">IN THE SAMPLE</p>
-                        <ul>
-                            <li>&middot; Title, copyright, dedication &amp; preface</li>
-                            <li>&middot; Chapter&nbsp;8 in full: Safe Schema Evolution at Scale</li>
-                            <li>&middot; Chapter&nbsp;14 in full: Money, State Machines, and Idempotency</li>
-                        </ul>
-                    </div>
+                <h2>Free sample</h2>
+                <p class="section-note">
+                    The sample includes the front matter and two full chapters - Chapter&nbsp;8
+                    on schema evolution and Chapter&nbsp;14 on money, state machines, and
+                    idempotency. No email required.
+                </p>
+                <div class="cta-row">
+                    <a href="assets/downloads/sample-laravel-after-deploy-light.pdf" class="btn btn-primary">
+                        Light mode (PDF)
+                    </a>
+                    <a href="assets/downloads/sample-laravel-after-deploy-dark.pdf" class="btn btn-outline">
+                        Dark mode (PDF)
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="notify" class="section-white notify-section">
+        <section id="notify">
             <div class="container section-pad">
-                <div class="section-heading">
-                    <span class="eyebrow">GET NOTIFIED</span>
-                    <h2 class="display">Be the first to know when it&rsquo;s ready.</h2>
-                    <p>
-                        The book is almost done and coming soon. Leave your email and
-                        I&rsquo;ll send one note, the day it&rsquo;s ready. No spam, no drip
-                        campaign.
-                    </p>
-                </div>
+                <h2>Get notified</h2>
+                <p class="section-note">
+                    The book is almost done and coming soon. Leave your email and I&rsquo;ll send
+                    one note, the day it&rsquo;s ready. No spam, no drip campaign.
+                </p>
 
                 <div class="notify-form">
                     <script async data-uid="814218f99a" src="https://nuruzzaman-milon.kit.com/814218f99a/index.js"></script>
@@ -397,27 +220,26 @@
         </section>
 
         <section id="author">
-            <div class="container section-pad">
-                <span class="eyebrow">ABOUT THE AUTHOR</span>
-                <div class="author-grid">
-                    <img src="assets/images/avatar-thumb.jpg" alt="Nuruzzaman Milon" width="64" height="64">
-                    <div>
-                        <h2>Nuruzzaman Milon</h2>
-                        <p>
-                            Nuruzzaman Milon is a software engineering leader, open-source creator,
-                            and tech community organizer, with a professional background spanning
-                            tech hubs across Asia, Europe and North America.
-                        </p>
-                        <p>
-                            His first book, <em>Laravel PHP Web Framework</em> (Dimik Publication,
-                            2015), ran to two editions, both best-sellers in Bangladesh and West
-                            Bengal.
-                        </p>
-                        <p>
-                            He lives near Vancouver with his wife and three children.
-                        </p>
-                        <a href="https://milon.im" class="author-link">More at milon.im &rarr;</a>
-                    </div>
+            <div class="container section-pad author">
+                <img src="assets/images/avatar-thumb.jpg" alt="Nuruzzaman Milon" width="68" height="68">
+                <div>
+                    <h2>Nuruzzaman Milon</h2>
+                    <p>
+                        Nuruzzaman Milon is a software engineering leader, open-source creator,
+                        and tech community organizer, with a professional background spanning
+                        tech hubs across Asia, Europe and North America.
+                    </p>
+                    <p>
+                        His first book, <em>Laravel PHP Web Framework</em> (Dimik Publication,
+                        2015), ran to two editions, both best-sellers in Bangladesh and West
+                        Bengal.
+                    </p>
+                    <p>
+                        He lives near Vancouver with his wife and three children.
+                    </p>
+                    <p>
+                        More at <a href="https://milon.im">milon.im &rarr;</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -425,23 +247,12 @@
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-top">
-            <div class="footer-brand">
-                <div>
-                    <p class="brand-title">Laravel After Deploy</p>
-                    <p class="brand-byline">by Nuruzzaman Milon</p>
-                </div>
-            </div>
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Nuruzzaman Milon</p>
             <div class="footer-links">
-                <a href="#inside">What&rsquo;s inside</a>
                 <a href="#toc">Contents</a>
-                <a href="#sample">Free sample</a>
+                <a href="#sample">Sample</a>
                 <a href="https://milon.im">milon.im</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <span id="year"></span> Nuruzzaman Milon. All rights reserved.</p>
             </div>
         </div>
     </footer>
