@@ -204,7 +204,7 @@ h1, h2, h3 {
 .hero-cover img {
     width: 100%;
     height: auto;
-    aspect-ratio: 7.5 / 9.25;
+    aspect-ratio: 7.44 / 9.69;
     object-fit: cover;
     border: 1px solid rgba(252, 232, 196, 0.55);
     transform: rotate(-2.5deg);
