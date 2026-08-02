@@ -244,10 +244,11 @@ section {
 }
 
 .intro {
-    margin: 0;
+    margin: 0.85rem 0 0;
+    max-width: 40rem;
     font-family: var(--font-serif);
-    font-size: 1.3rem;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    line-height: 1.55;
     color: var(--ink);
 }
 
