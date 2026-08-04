@@ -328,21 +328,112 @@ section {
     background-color: var(--white);
 }
 
+.section-ink .btn-outline:hover {
+    background-color: rgba(252, 232, 196, 0.12);
+    color: var(--cream);
+    text-decoration: none;
+}
+
 #notify {
     text-align: center;
 }
 
 #notify .container {
-    max-width: 34rem;
+    max-width: 36rem;
 }
 
 .notify-form {
     margin-top: 2rem;
 }
 
-#notify .formkit-form [data-element="submit"],
+/*
+ * Kit's embed stacks the field/button below ~700px form width, and our
+ * notify column is narrower than that - so force a single-row flex layout:
+ * email grows, submit stays content-sized. Also kill Kit's pill radii and
+ * the hover overlay on the inner <span>.
+ */
+#notify .formkit-form .formkit-fields {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0.5rem;
+    margin: 0 !important;
+}
+
+#notify .formkit-form .formkit-field {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+#notify .formkit-form .formkit-input {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 0 !important;
+    border: 1px solid rgba(22, 18, 15, 0.22) !important;
+    color: var(--ink) !important;
+    background: #fff !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.95rem !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    padding: 0.8rem 1rem !important;
+}
+
+#notify .formkit-form .formkit-input:focus {
+    border-color: var(--crimson) !important;
+    outline: none !important;
+}
+
 #notify .formkit-form .formkit-submit {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
     background-color: var(--crimson) !important;
+    color: var(--cream) !important;
+    font-family: var(--font-sans) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+#notify .formkit-form .formkit-submit > span {
+    display: block !important;
+    padding: 0.8rem 1.1rem !important;
+    background: transparent !important;
+    transition: none !important;
+}
+
+#notify .formkit-form .formkit-submit:hover,
+#notify .formkit-form .formkit-submit:focus {
+    background-color: var(--crimson-deep) !important;
+    outline: none !important;
+}
+
+#notify .formkit-form .formkit-submit:hover > span,
+#notify .formkit-form .formkit-submit:focus > span {
+    background-color: transparent !important;
+}
+
+@media (max-width: 520px) {
+    #notify .formkit-form .formkit-fields {
+        flex-wrap: wrap !important;
+    }
+
+    #notify .formkit-form .formkit-field,
+    #notify .formkit-form .formkit-submit {
+        flex: 1 1 100% !important;
+    }
 }
 
 .author {
