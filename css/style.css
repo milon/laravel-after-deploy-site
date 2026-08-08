@@ -301,17 +301,40 @@ section {
     gap: 2.25rem;
 }
 
-@media (min-width: 700px) {
-    .toc-list {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 2rem 3rem;
-    }
+.toc-part summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.toc-part summary::-webkit-details-marker {
+    display: none;
 }
 
 .toc-part h3 {
-    font-size: 1.15rem;
+    position: relative;
     padding-bottom: 0.6rem;
+    padding-right: 1.75rem;
+    font-size: 1.15rem;
     border-bottom: 2px solid var(--crimson);
+}
+
+.toc-part h3::after {
+    content: "+";
+    position: absolute;
+    top: -0.15rem;
+    right: 0;
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--crimson);
+}
+
+.toc-part[open] h3::after {
+    content: "\2212";
+}
+
+.toc-part summary:hover h3 {
+    color: var(--crimson-deep);
 }
 
 .toc-part-num {
