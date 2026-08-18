@@ -114,6 +114,7 @@ h1, h2, h3 {
 }
 
 .btn-outline-ink {
+    border: 2px solid;
     border-color: var(--ink);
     color: var(--ink);
 }
