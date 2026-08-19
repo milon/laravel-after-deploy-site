@@ -40,7 +40,7 @@
 
     <header class="site-header">
         <div class="container nav">
-            <a href="#notify" class="btn btn-outline-light">Notify me</a>
+            <a href="#buy" class="btn btn-outline-light">Get the book</a>
         </div>
     </header>
 
@@ -57,7 +57,7 @@
 
             <div class="container">
                 <div class="hero-inner">
-                <p class="kicker">Almost done &middot; coming soon</p>
+                <p class="kicker">Paperback &amp; Kindle</p>
 
                 <h1 class="wordmark" aria-label="Laravel After Deploy">
                     <span class="wordmark-line"><span class="wordmark-cap">L</span>aravel</span>
@@ -74,11 +74,20 @@
                     problems are not.
                 </p>
 
-                <p class="meta">Nuruzzaman Milon &middot; 46 chapters &middot; PDF &amp; EPUB</p>
+                <p class="meta">Nuruzzaman Milon &middot; 46 chapters &middot; paperback &amp; Kindle</p>
 
                 <div class="cta-row">
-                    <a href="#notify" class="btn btn-outline-ink">Get notified when it&rsquo;s ready</a>
-                    <a href="#sample" class="btn btn-outline-light">Download a free sample</a>
+                    <a
+                        class="btn btn-outline-ink"
+                        href="https://www.amazon.com/dp/AMAZON_PAPERBACK_ASIN"
+                        rel="noopener noreferrer"
+                    >Paperback on Amazon</a>
+                    <a
+                        class="btn btn-outline-light"
+                        href="https://www.amazon.com/dp/AMAZON_KINDLE_ASIN"
+                        rel="noopener noreferrer"
+                    >Kindle on Amazon</a>
+                    <a href="#sample" class="btn btn-outline-light">Free sample</a>
                 </div>
                 </div>
             </div>
@@ -239,10 +248,7 @@
                         </p>
                         <div class="cta-row">
                             <a href="assets/downloads/sample-laravel-after-deploy-light.pdf" class="btn btn-primary">
-                                Light mode (PDF)
-                            </a>
-                            <a href="assets/downloads/sample-laravel-after-deploy-dark.pdf" class="btn btn-outline-light">
-                                Dark mode (PDF)
+                                Download the sample (PDF)
                             </a>
                         </div>
                     </div>
@@ -258,17 +264,38 @@
             </div>
         </section>
 
-        <section id="notify">
+        <section id="buy">
             <div class="container section-pad">
                 <div class="section-head">
                     <span class="section-num">04</span>
-                    <h2>Get notified</h2>
+                    <h2>Get the book</h2>
                 </div>
                 <p class="section-note">
-                    The book is almost done and coming soon. Leave your email and I&rsquo;ll send
-                    one note, the day it&rsquo;s ready. No spam, no drip campaign.
+                    Paperback and Kindle, both through Amazon. The sample above is free and
+                    doesn&rsquo;t need an account.
                 </p>
 
+                <div class="cta-row buy-row">
+                    <!--
+                      Replace AMAZON_PAPERBACK_ASIN and AMAZON_KINDLE_ASIN with the
+                      live 10-character ASINs from KDP once the listing is approved.
+                      Search this file for AMAZON_ to catch every copy.
+                    -->
+                    <a
+                        class="btn btn-primary"
+                        href="https://www.amazon.com/dp/AMAZON_PAPERBACK_ASIN"
+                        rel="noopener noreferrer"
+                    >Paperback on Amazon</a>
+                    <a
+                        class="btn btn-outline-ink"
+                        href="https://www.amazon.com/dp/AMAZON_KINDLE_ASIN"
+                        rel="noopener noreferrer"
+                    >Kindle on Amazon</a>
+                </div>
+
+                <p class="section-note buy-note">
+                    Prefer an email when the Amazon pages go live? One note, no drip.
+                </p>
                 <div class="notify-form">
                     <script async data-uid="814218f99a" src="https://nuruzzaman-milon.kit.com/814218f99a/index.js"></script>
                 </div>
@@ -313,6 +340,7 @@
             <div class="footer-links">
                 <a href="#toc">Contents</a>
                 <a href="#sample">Sample</a>
+                <a href="#buy">Get the book</a>
                 <a href="https://milon.im">milon.im</a>
             </div>
         </div>
