@@ -139,23 +139,10 @@ h1, h2, h3 {
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
     padding-top: 1.6rem;
     padding-bottom: 1.6rem;
-}
-
-.brand {
-    font-family: var(--font-cover-title);
-    font-weight: 700;
-    font-size: 0.82rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--white);
-}
-
-.brand:hover {
-    text-decoration: none;
 }
 
 .nav .btn {
