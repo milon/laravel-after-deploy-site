@@ -187,19 +187,7 @@ h1, h2, h3 {
     padding-bottom: 5rem;
 }
 
-.kicker {
-    margin: 0;
-    font-size: 0.74rem;
-    font-weight: 600;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.82);
-}
 
-/*
- * Cover wordmark: all caps with an enlarged initial on each word, matching
- * the printed title.
- */
 .hero h1 {
     margin: 1.4rem 0 0;
     font-family: var(--font-cover-title);
@@ -261,10 +249,6 @@ h1, h2, h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-}
-
-.buy-row {
-    margin-top: 1.6rem;
 }
 
 section {
