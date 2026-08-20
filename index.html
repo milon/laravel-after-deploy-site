@@ -106,8 +106,16 @@
                     twice, when the on-call phone rings at 3&nbsp;a.m. and the answer
                     isn&rsquo;t in the framework docs. This book is about that layer &mdash;
                     the decisions that keep a real system fast, correct, and operable once
-                    it&rsquo;s already in production. The examples are Laravel and PHP by
-                    design; the problems are not Laravel-only.
+                    it&rsquo;s already in production.
+                </p>
+                <p class="intro">
+                    Every code example is Laravel and PHP. That choice is practical, not
+                    philosophical: one stack, end to end, so each failure can be shown with
+                    real framework seams &mdash; Eloquent, queues, Horizon, Sanctum, the
+                    container, the scheduler. The problems themselves are not Laravel-only.
+                    Idempotency, backpressure, observability, failure isolation, and schema
+                    changes under load show up in any language. If you can read PHP, you can
+                    carry the patterns home even when your implementation looks different.
                 </p>
             </div>
         </section>
