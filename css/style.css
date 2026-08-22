@@ -244,6 +244,15 @@ h1, h2, h3 {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Reference data, not a selling point: it trails the formats line rather than
+   standing as a second stat of its own. */
+.hero .isbn {
+    margin-top: 0.55rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .cta-row {
     margin-top: 2.2rem;
     display: flex;
@@ -414,6 +423,45 @@ section {
     }
 }
 
+.buy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.buy-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.25rem;
+    background-color: var(--white);
+    border: 1px solid var(--rule);
+}
+
+.buy-label {
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--crimson);
+}
+
+.buy-option h3 {
+    margin: 0.7rem 0 0;
+    font-size: 1.6rem;
+}
+
+.buy-option p {
+    margin: 0.9rem 0 2rem;
+    color: var(--muted);
+}
+
+/* The two blurbs are different lengths, so push both buttons to a shared baseline. */
+.buy-option .btn {
+    margin-top: auto;
+}
+
 .author {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -553,6 +601,15 @@ section {
     .sample-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 2.5rem;
+    }
+
+    .buy-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.25rem;
+    }
+
+    .buy-option {
+        padding: 1.75rem;
     }
 
     .sample-cover {
