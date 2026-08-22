@@ -5,9 +5,12 @@ Performance, and Operations at Scale*.
 
 Live at **https://laravel-after-deploy.milon.im**.
 
-## Amazon links
+## Identifiers
 
-The buy buttons on `launch/amazon` are placeholders. After KDP publishes,
-replace every `AMAZON_ASIN` in `index.html` with a 10-character ASIN from
-the KDP bookshelf (either format is fine once paperback and Kindle are
-linked). The URL shape is `https://www.amazon.com/dp/<ASIN>`.
+- Paperback ISBN: `979-8193747345`
+- US Amazon ASIN: `B0HG36PSDJ`
+- Buy URL: `https://mybook.to/laravel-after-deploy`
+
+The buy URL is a Booklinker smart link. It sends the reader to their local
+Amazon storefront, so the site does not need a separate ASIN per marketplace.
+The US ASIN is kept here as the source identifier.
