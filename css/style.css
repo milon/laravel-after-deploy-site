@@ -1,3 +1,27 @@
+@font-face {
+    font-family: "Cormorant Garamond";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../assets/fonts/cormorant-garamond-700-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Libre Bodoni";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("../assets/fonts/libre-bodoni-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("../assets/fonts/oswald-600-latin.woff2") format("woff2");
+}
+
 :root {
     --crimson: #D20F38;
     --crimson-deep: #9c0c23;
@@ -9,7 +33,7 @@
     --rule: rgba(22, 18, 15, 0.14);
 
     --font-serif: "Libre Bodoni", Didot, "Bodoni MT", Georgia, serif;
-    --font-sans: "Source Sans 3", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-cover-title: "Cormorant Garamond", "Cormorant", Didot, Georgia, serif;
     --font-cover-sub: "Oswald", "Arial Narrow", "Helvetica Neue Condensed", sans-serif;
 

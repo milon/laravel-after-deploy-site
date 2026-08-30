@@ -28,10 +28,16 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Bodoni:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Oswald:wght@500;600&family=Source+Sans+3:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-
+    <link
+        rel="preload"
+        as="image"
+        href="assets/images/elephant-640.webp"
+        imagesrcset="assets/images/elephant-320.webp 320w, assets/images/elephant-640.webp 640w, assets/images/elephant-917.webp 917w"
+        imagesizes="(max-width: 900px) 30vw, 62vw"
+        fetchpriority="high"
+    >
+    <link rel="preload" href="assets/fonts/cormorant-garamond-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/oswald-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
 
     <script defer type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "54a8bdc3cac7445b8958d0073fb90a5e"}'></script>
@@ -49,9 +55,12 @@
         <section class="hero">
             <div class="hero-elephant" aria-hidden="true">
                 <img
-                    src="assets/images/elephant.png"
+                    src="assets/images/elephant-640.webp"
+                    srcset="assets/images/elephant-320.webp 320w, assets/images/elephant-640.webp 640w, assets/images/elephant-917.webp 917w"
+                    sizes="(max-width: 900px) 30vw, 62vw"
                     alt=""
                     width="917" height="1339"
+                    fetchpriority="high"
                 >
             </div>
 
@@ -254,9 +263,13 @@
 
                     <div class="sample-cover">
                         <img
-                            src="assets/images/cover.png"
+                            src="assets/images/cover-400.webp"
+                            srcset="assets/images/cover-400.webp 400w, assets/images/cover-800.webp 800w"
+                            sizes="(max-width: 900px) 13rem, 18rem"
                             alt="Cover of Laravel After Deploy: Architecture, Performance, and Operations at Scale, by Nuruzzaman Milon"
                             width="1275" height="1650"
+                            loading="lazy"
+                            decoding="async"
                         >
                     </div>
                 </div>
@@ -313,7 +326,7 @@
                     <h2>Nuruzzaman Milon</h2>
                 </div>
                 <div class="author">
-                    <img src="assets/images/avatar-thumb.jpg" alt="Nuruzzaman Milon" width="68" height="68">
+                    <img src="assets/images/avatar-thumb.jpg" alt="Nuruzzaman Milon" width="68" height="68" loading="lazy" decoding="async">
                     <div>
                         <p>
                             Nuruzzaman Milon is a software engineering leader and open-source
@@ -350,6 +363,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
 </body>
 </html>
