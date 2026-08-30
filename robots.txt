@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://laravel-after-deploy.milon.im/sitemap.xml
