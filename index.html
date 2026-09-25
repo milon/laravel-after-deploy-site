@@ -81,13 +81,15 @@
 </head>
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header">
         <div class="container nav">
             <a href="#buy" class="btn btn-outline-light">Get the book</a>
         </div>
     </header>
 
-    <main id="top">
+    <main id="main">
 
         <section class="hero">
             <div class="hero-elephant" aria-hidden="true">
@@ -120,7 +122,7 @@
                 <p class="meta">46 chapters &middot; 740 pages &middot; Paperback &middot; Kindle &middot; PDF &middot; EPUB</p>
 
                 <div class="cta-row">
-                    <a href="#buy" class="btn btn-outline-ink">Get the book</a>
+                    <a href="#buy" class="btn btn-solid-light">Get the book</a>
                     <a href="#sample" class="btn btn-outline-light">Free sample</a>
                 </div>
                 </div>
@@ -150,6 +152,80 @@
                     in any language. If you can read PHP, you can carry the patterns home
                     even when your implementation looks different.
                 </p>
+            </div>
+        </section>
+
+        <section id="sample" class="section-ink">
+            <div class="container section-pad">
+                <div class="section-head">
+                    <h2>Free sample</h2>
+                </div>
+
+                <div class="sample-grid">
+                    <div>
+                        <p class="section-note">
+                            The sample includes the front matter, the preface, and three
+                            full chapters: Chapter&nbsp;9 on schema evolution,
+                            Chapter&nbsp;16 on rate limiting and abuse protection, and
+                            Chapter&nbsp;25 on datetime and timezones. No email required.
+                        </p>
+                        <div class="cta-row">
+                            <a href="assets/downloads/sample-laravel-after-deploy-light.pdf" class="btn btn-primary">
+                                Download the sample (PDF)
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="sample-cover">
+                        <img
+                            src="assets/images/cover-400.webp"
+                            srcset="assets/images/cover-400.webp 400w, assets/images/cover-800.webp 800w"
+                            sizes="(max-width: 900px) 13rem, 18rem"
+                            alt="Cover of Laravel After Deploy: Architecture, Performance, and Operations at Scale, by Nuruzzaman Milon"
+                            width="1275" height="1650"
+                            decoding="async"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="buy">
+            <div class="container section-pad">
+                <div class="section-head">
+                    <h2>Get the book</h2>
+                </div>
+                <p class="section-note">
+                    Start with the ebook from my store. Print and Kindle are on Amazon.
+                </p>
+
+                <div class="buy-grid">
+                    <div class="buy-option buy-option-primary">
+                        <h3>PDF &amp; EPUB</h3>
+                        <p>
+                            Both files in one purchase, with no DRM and no account to
+                            create. Download starts as soon as you check out.
+                        </p>
+                        <a
+                            class="btn btn-primary"
+                            href="https://store.milon.im/laravel-after-deploy"
+                            rel="noopener noreferrer"
+                        >Buy from the store</a>
+                    </div>
+
+                    <div class="buy-option buy-option-secondary">
+                        <h3>Paperback &amp; Kindle</h3>
+                        <p>
+                            740 pages in print, or the Kindle edition for your library.
+                            The link opens your local Amazon storefront.
+                        </p>
+                        <a
+                            class="btn btn-outline-ink"
+                            href="https://mybook.to/laravel-after-deploy"
+                            rel="noopener noreferrer"
+                        >Buy on Amazon</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -270,82 +346,6 @@
             </div>
         </section>
 
-        <section id="sample" class="section-ink">
-            <div class="container section-pad">
-                <div class="section-head">
-                    <h2>Free sample</h2>
-                </div>
-
-                <div class="sample-grid">
-                    <div>
-                        <p class="section-note">
-                            The sample includes the front matter, the preface, and three
-                            full chapters: Chapter&nbsp;9 on schema evolution,
-                            Chapter&nbsp;16 on rate limiting and abuse protection, and
-                            Chapter&nbsp;25 on datetime and timezones. No email required.
-                        </p>
-                        <div class="cta-row">
-                            <a href="assets/downloads/sample-laravel-after-deploy-light.pdf" class="btn btn-primary">
-                                Download the sample (PDF)
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="sample-cover">
-                        <img
-                            src="assets/images/cover-400.webp"
-                            srcset="assets/images/cover-400.webp 400w, assets/images/cover-800.webp 800w"
-                            sizes="(max-width: 900px) 13rem, 18rem"
-                            alt="Cover of Laravel After Deploy: Architecture, Performance, and Operations at Scale, by Nuruzzaman Milon"
-                            width="1275" height="1650"
-                            loading="lazy"
-                            decoding="async"
-                        >
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="buy">
-            <div class="container section-pad">
-                <div class="section-head">
-                    <h2>Get the book</h2>
-                </div>
-                <p class="section-note">
-                    Four formats, sold in two places. The ebooks come from my own store;
-                    print and Kindle go through Amazon.
-                </p>
-
-                <div class="buy-grid">
-                    <div class="buy-option">
-                        <h3>PDF &amp; EPUB</h3>
-                        <p>
-                            Both files in one purchase, with no DRM and no account to
-                            create. Download starts as soon as you check out.
-                        </p>
-                        <a
-                            class="btn btn-primary"
-                            href="https://store.milon.im/laravel-after-deploy"
-                            rel="noopener noreferrer"
-                        >Buy from the store</a>
-                    </div>
-
-                    <div class="buy-option">
-                        <h3>Paperback &amp; Kindle</h3>
-                        <p>
-                            740 pages in print, or the Kindle edition for your library.
-                            The link opens your local Amazon storefront.
-                        </p>
-                        <a
-                            class="btn btn-outline-ink"
-                            href="https://mybook.to/laravel-after-deploy"
-                            rel="noopener noreferrer"
-                        >Buy on Amazon</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="author">
             <div class="container section-pad">
                 <div class="section-head">
@@ -381,9 +381,9 @@
         <div class="container footer-inner">
             <p>&copy; <span id="year"></span> Nuruzzaman Milon &middot; ISBN 979-8193747345</p>
             <div class="footer-links">
-                <a href="#toc">Contents</a>
                 <a href="#sample">Sample</a>
                 <a href="#buy">Get the book</a>
+                <a href="#toc">Contents</a>
                 <a href="https://milon.im">milon.im</a>
             </div>
         </div>
