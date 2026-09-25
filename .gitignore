@@ -1,2 +1,5 @@
 .DS_Store
+.cursor
 GUIDE.md
+.impeccable/hook.cache.json
+.impeccable/critique/
