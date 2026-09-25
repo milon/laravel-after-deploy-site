@@ -632,7 +632,9 @@ section {
     text-decoration: underline;
 }
 
-@media (min-width: 701px) {
+/* Tailwind default breakpoints: sm 640px, md 768px, lg 1024px, xl 1280px */
+
+@media (min-width: 768px) {
     .author {
         grid-template-columns: 9rem minmax(0, 1fr);
         gap: 2.5rem;
@@ -640,7 +642,7 @@ section {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1023px) {
     /* Sides only: the shorthand would wipe the vertical padding .nav sets. */
     .container {
         padding-left: 1.5rem;
@@ -730,7 +732,7 @@ section {
     }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 639px) {
     .hero h1 {
         font-size: clamp(2rem, 8.4vw, 2.9rem);
         line-height: 1.12;
